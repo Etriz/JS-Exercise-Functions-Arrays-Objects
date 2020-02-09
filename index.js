@@ -92,7 +92,6 @@ function makeSmartPerson(personName) {
   return smartPerson;
 }
 
-/*
 // ⭐️ Example Test Data ⭐️
 
 var inventory = [
@@ -109,10 +108,10 @@ var inventory = [
   { id: 11, car_make: "Infiniti", car_model: "G35", car_year: 2004 },
   { id: 12, car_make: "Lotus", car_model: "Esprit", car_year: 2004 },
   { id: 13, car_make: "Chevrolet", car_model: "Cavalier", car_year: 1997 },
-  { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 }
+  { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 },
   /// ... Truncated
-]
-*/
+];
+
 /**
  * ### Example Array Challenge:
  *
@@ -180,8 +179,16 @@ function getLastCarInfo(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
  */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(inventory, carID) {
   /* code here */
+  let car = null;
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].id === carID) {
+      car = inventory[i];
+    }
+  }
+  console.log(car);
+  return `This is a ${car.car_make} ${car.car_model}`;
 }
 
 /**
@@ -192,8 +199,20 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
  */
-function sortCarInventory(/* code here */) {
+function sortCarInventory(inventory) {
   /* code here */
+  let carSort = inventory.sort((a, b) => {
+    let first = a.car_model.toUpperCase(); // ignore upper and lowercase
+    let second = b.car_model.toUpperCase(); // ignore upper and lowercase
+    if (first < second) {
+      return -1;
+    }
+    if (first > second) {
+      return 1;
+    }
+    return 0;
+  });
+  return carSort;
 }
 
 /**
