@@ -146,7 +146,7 @@ function get3rdCar(inventory) {
  */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
-  let car = inventory[index];
+  const car = inventory[index];
   return `This is a ${car.car_make} ${car.car_model}`;
 }
 
@@ -163,7 +163,7 @@ function getCarInfoByIndex(inventory, index) {
  */
 function getLastCarInfo(inventory) {
   /* code here */
-  let car = inventory[inventory.length - 1];
+  const car = inventory[inventory.length - 1];
   return `This is a ${car.car_make} ${car.car_model}`;
 }
 
@@ -187,7 +187,6 @@ function getCarInfoById(inventory, carID) {
       car = inventory[i];
     }
   }
-  console.log(car);
   return `This is a ${car.car_make} ${car.car_model}`;
 }
 
@@ -226,7 +225,7 @@ function sortCarInventory(inventory) {
  */
 function getModelYears(inventory) {
   /* code here */
-  let carYears = [];
+  const carYears = [];
   for (let i = 0; i < inventory.length; i++) {
     carYears.push(inventory[i].car_year);
   }
@@ -247,7 +246,7 @@ function getModelYears(inventory) {
  */
 function getOlderCars(inventory, maxYear) {
   /* code here */
-  let oldCars = [];
+  const oldCars = [];
   for (let i = 0; i < inventory.length; i++) {
     if (inventory[i].car_year <= maxYear) {
       oldCars.push(inventory[i]);
@@ -269,7 +268,7 @@ function getOlderCars(inventory, maxYear) {
  */
 function getGermanCars(inventory) {
   /* code here */
-  let germanCars = [];
+  const germanCars = [];
   for (let i = 0; i < inventory.length; i++) {
     if (
       inventory[i].car_make === "Audi" ||
@@ -320,7 +319,7 @@ const argTimesTwo = num => num * 2; // code here!
  */
 function carMaker(odoReading) {
   /* code here */
-  let car = {
+  const car = {
     odometer: odoReading,
     drive: function(distance) {
       return (this.odometer = this.odometer + distance);
